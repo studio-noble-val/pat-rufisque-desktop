@@ -1,0 +1,20 @@
+{
+    "REPO_URL": "https://github.com/votre-compte/votre-repo.git",
+    "LOCAL_REPO_PATH": "C:/Users/VotreNom/chemin/vers/repo_local",
+    "GITHUB_USERNAME": "",
+    "GITHUB_TOKEN": "",
+    "FILES": [
+        {
+            "name": "Cantines Scolaires",
+            "path": "mviewer/apps/public/cantines/cantines_scolaires.geojson"
+        },
+        {
+            "name": "Cuisines Centrales",
+            "path": "mviewer/apps/public/cantines/cuisine_centrale.geojson"
+        },
+        {
+            "name": "Fournisseurs",
+            "path": "mviewer/apps/public/gouvernance/fournisseurs.geojson"
+        }
+    ]
+}

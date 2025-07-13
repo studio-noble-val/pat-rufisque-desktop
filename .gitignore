@@ -1,0 +1,15 @@
+# Environnement virtuel
+/venv/
+
+# Fichiers de configuration sensibles
+# Ne JAMAIS commiter ce fichier car il contient votre token!
+/config.json
+
+# Fichiers et dossiers générés par Python
+__pycache__/
+*.pyc
+
+# Fichiers et dossiers générés par PyInstaller
+/dist/
+/build/
+*.spec

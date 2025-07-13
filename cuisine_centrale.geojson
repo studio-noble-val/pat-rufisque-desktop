@@ -1,0 +1,234 @@
+{
+  "type": "FeatureCollection",
+  "name": "cuisine_centrale",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "categorie": "Gestionnaire cuisine centrale",
+        "nom": "Cuisine centrale Yene",
+        "date_creation": "2021-05-01",
+        "nb_repas_max": 1000,
+        "collectivite": "Yene",
+        "_id": 662688666,
+        "_uuid": "525b75ba-d495-492e-88c8-9c8ff240e498",
+        "statistiques_annuelles": [
+          {
+            "annee": "2021-2022",
+            "nb_repas_servis": 20241,
+            "nb_ecoles_beneficiaires": 5,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 1,
+            "nb_femmes_cuisinieres": 8,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": 314
+          },
+          {
+            "annee": "2022-2023",
+            "nb_repas_servis": 69583,
+            "nb_ecoles_beneficiaires": 7,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 0,
+            "nb_femmes_cuisinieres": 9,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": 412
+          },
+          {
+            "annee": "2023-2024",
+            "nb_repas_servis": null,
+            "nb_ecoles_beneficiaires": 6,
+            "nb_gie_transformatrices": 4,
+            "nb_gie_producteurs_maraichers": 1,
+            "nb_femmes_cuisinieres": 9,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": null
+          },
+          {
+            "annee": "2024-2025",
+            "nb_repas_servis": null,
+            "nb_ecoles_beneficiaires": 5,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 1,
+            "nb_femmes_cuisinieres": 9,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": null
+          }
+        ],
+        "statistiques_globales": {
+          "total_repas_servis": 99034,
+          "nb_gie_transformatrices": 3,
+          "nb_gie_producteurs_maraichers": 1
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-17.165745, 14.60802]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "categorie": "Gestionnaire cuisine centrale",
+        "nom": "Cuisine centrale Bargny",
+        "date_creation": "2025-05-01",
+        "nb_repas_max": 1000,
+        "collectivite": "Bargny",
+        "_id": 663413932,
+        "_uuid": "b0759c73-35c1-490e-a844-d8f21da6ded3",
+        "statistiques_annuelles": [
+          {
+            "annee": "2024-2025",
+            "nb_repas_servis": null,
+            "nb_ecoles_beneficiaires": 3,
+            "nb_gie_transformatrices": 4,
+            "nb_gie_producteurs_maraichers": 0,
+            "nb_femmes_cuisinieres": null,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": null
+          }
+        ],
+        "statistiques_globales": {
+          "total_repas_servis": null,
+          "nb_gie_transformatrices": 4,
+          "nb_gie_producteurs_maraichers": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-17.2305, 14.692599]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "categorie": "Gestionnaire cuisine centrale",
+        "nom": "Cuisine centrale Bambilor",
+        "date_creation": "2024-02-01",
+        "nb_repas_max": 1500,
+        "collectivite": "Bambilor",
+        "_id": 664474692,
+        "_uuid": "5ef6888f-1b81-4732-9c8b-1f0a51193f31",
+        "statistiques_annuelles": [
+          {
+            "annee": "2022-2023",
+            "nb_repas_servis": 21122,
+            "nb_ecoles_beneficiaires": 4,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 1,
+            "nb_femmes_cuisinieres": 8,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": null
+          },
+          {
+            "annee": "2023-2024",
+            "nb_repas_servis": null,
+            "nb_ecoles_beneficiaires": 4,
+            "nb_gie_transformatrices": 2,
+            "nb_gie_producteurs_maraichers": 2,
+            "nb_femmes_cuisinieres": 4,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": null
+          },
+          {
+            "annee": "2024-2025",
+            "nb_repas_servis": null,
+            "nb_ecoles_beneficiaires": 4,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 1,
+            "nb_femmes_cuisinieres": 6,
+            "nb_commercants": 1,
+            "cout_moyen_unitaire_repas": null
+          }
+        ],
+        "statistiques_globales": {
+          "total_repas_servis": 21122,
+          "nb_gie_transformatrices": 3,
+          "nb_gie_producteurs_maraichers": 4
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-17.186308, 14.804446]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "categorie": "Gestionnaire cuisine centrale",
+        "nom": "Lycée moderne (Rufisque Est)",
+        "date_creation": "2020-01-01",
+        "nb_repas_max": 2500,
+        "collectivite": "Conseil Départemental Rufisque",
+        "_id": 669435922,
+        "_uuid": "c8074cf0-e987-49a2-bbd0-f51f4acada08",
+        "statistiques_annuelles": [
+          {
+            "annee": "2020-2021",
+            "nb_repas_servis": 36625,
+            "nb_ecoles_beneficiaires": 5,
+            "nb_gie_transformatrices": 2,
+            "nb_gie_producteurs_maraichers": 2,
+            "nb_femmes_cuisinieres": 10,
+            "nb_commercants": 3,
+            "cout_moyen_unitaire_repas": 422
+          },
+          {
+            "annee": "2021-2022",
+            "nb_repas_servis": 98902,
+            "nb_ecoles_beneficiaires": 10,
+            "nb_gie_transformatrices": 4,
+            "nb_gie_producteurs_maraichers": 2,
+            "nb_femmes_cuisinieres": 12,
+            "nb_commercants": 3,
+            "cout_moyen_unitaire_repas": null
+          },
+          {
+            "annee": "2022-2023",
+            "nb_repas_servis": 127560,
+            "nb_ecoles_beneficiaires": 9,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 2,
+            "nb_femmes_cuisinieres": 14,
+            "nb_commercants": 3,
+            "cout_moyen_unitaire_repas": 294
+          },
+          {
+            "annee": "2023-2024",
+            "nb_repas_servis": 59373,
+            "nb_ecoles_beneficiaires": 7,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": null,
+            "nb_femmes_cuisinieres": 10,
+            "nb_commercants": 3,
+            "cout_moyen_unitaire_repas": null
+          },
+          {
+            "annee": "2024-2025",
+            "nb_repas_servis": null,
+            "nb_ecoles_beneficiaires": 8,
+            "nb_gie_transformatrices": 3,
+            "nb_gie_producteurs_maraichers": 1,
+            "nb_femmes_cuisinieres": 12,
+            "nb_commercants": 3,
+            "cout_moyen_unitaire_repas": 288
+          }
+        ],
+        "statistiques_globales": {
+          "total_repas_servis": 322460,
+          "nb_gie_transformatrices": 3,
+          "nb_gie_producteurs_maraichers": 1
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-17.268041, 14.716463]
+      }
+    }
+  ]
+}
