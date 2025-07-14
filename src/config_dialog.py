@@ -1,14 +1,27 @@
-# config_dialog.py
+# src/config_dialog.py
 import json
 import os
 from PySide6.QtWidgets import (
     QDialog, QVBoxLayout, QFormLayout, QLineEdit,
     QPushButton, QDialogButtonBox, QLabel, QFileDialog
 )
-# NOUVELLE IMPORTATION CORRIGÉE :
-from PySide6.QtCore import Qt 
+from PySide6.QtCore import Qt
 
-CONFIG_FILE = "config.json"
+# --- DÉBUT DE LA MODIFICATION ---
+
+# Définir un nom pour le dossier de configuration de notre application
+APP_NAME = "EditeurGeoJSON"
+
+# Construire un chemin qui fonctionne sur tous les systèmes d'exploitation (Windows, macOS, Linux)
+# os.path.expanduser("~") récupère le dossier personnel de l'utilisateur (ex: C:\Users\VotreNom)
+CONFIG_DIR = os.path.join(os.path.expanduser("~"), f".{APP_NAME}")
+CONFIG_FILE = os.path.join(CONFIG_DIR, "config.json")
+
+# S'assurer que le dossier de configuration existe avant de lire ou écrire dedans
+os.makedirs(CONFIG_DIR, exist_ok=True)
+
+# --- FIN DE LA MODIFICATION ---
+
 
 class ConfigDialog(QDialog):
     def __init__(self, parent=None):
@@ -27,7 +40,6 @@ class ConfigDialog(QDialog):
         local_path_layout = QVBoxLayout()
         local_path_layout.setContentsMargins(0,0,0,0)
         local_path_layout.addWidget(self.local_path_edit)
-        # La ligne qui causait l'erreur fonctionne maintenant grâce à l'import
         local_path_layout.addWidget(self.browse_button, 0, Qt.AlignmentFlag.AlignRight)
 
         # Layout principal du formulaire
@@ -56,16 +68,20 @@ class ConfigDialog(QDialog):
 
     def load_config(self):
         try:
+            # On utilise maintenant la variable globale CONFIG_FILE qui contient le chemin complet
             with open(CONFIG_FILE, 'r') as f:
                 config = json.load(f)
             self.repo_url_edit.setText(config.get("REPO_URL", ""))
-            self.local_path_edit.setText(config.get("LOCAL_REPO_PATH", os.path.join(os.path.expanduser("~"), "geojson_editor_repo")))
+            # On propose un dossier par défaut dans le dossier de l'utilisateur
+            default_repo_path = os.path.join(os.path.expanduser("~"), "geojson_editor_repo")
+            self.local_path_edit.setText(config.get("LOCAL_REPO_PATH", default_repo_path))
             self.username_edit.setText(config.get("GITHUB_USERNAME", ""))
             self.token_edit.setText(config.get("GITHUB_TOKEN", ""))
         except FileNotFoundError:
-            default_path = os.path.join(os.path.expanduser("~"), "geojson_editor_repo")
-            self.local_path_edit.setText(default_path)
-            print("Fichier de configuration non trouvé. Utilisation des valeurs par défaut.")
+            # Si le fichier n'existe pas, on propose un chemin par défaut
+            default_repo_path = os.path.join(os.path.expanduser("~"), "geojson_editor_repo")
+            self.local_path_edit.setText(default_repo_path)
+            print(f"Fichier de configuration non trouvé à l'emplacement '{CONFIG_FILE}'. Utilisation des valeurs par défaut.")
     
     def get_config(self):
         return {
@@ -81,5 +97,6 @@ class ConfigDialog(QDialog):
         }
 
 def save_config(config):
+    # On utilise maintenant la variable globale CONFIG_FILE qui contient le chemin complet
     with open(CONFIG_FILE, 'w') as f:
         json.dump(config, f, indent=4)

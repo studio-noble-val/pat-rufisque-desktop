@@ -1,0 +1,20 @@
+{
+    "REPO_URL": "https://github.com/studio-noble-val/pat-rufisque",
+    "LOCAL_REPO_PATH": "C:\\Users\\Salon\\geojson_editor_repo\\pat-rufisque",
+    "GITHUB_USERNAME": "studio-noble-val",
+    "GITHUB_TOKEN": "",
+    "FILES": [
+        {
+            "name": "Cantines Scolaires",
+            "path": "mviewer/apps/public/cantines/cantines_scolaires.geojson"
+        },
+        {
+            "name": "Cuisines Centrales",
+            "path": "mviewer/apps/public/cantines/cuisine_centrale.geojson"
+        },
+        {
+            "name": "Fournisseurs",
+            "path": "mviewer/apps/public/gouvernance/fournisseurs.geojson"
+        }
+    ]
+}
