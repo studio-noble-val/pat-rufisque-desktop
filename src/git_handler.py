@@ -1,6 +1,7 @@
 # git_handler.py
 import os
 from git import Repo, GitCommandError
+from urllib.parse import urlparse, urlunparse
 
 class GitHandler:
     def __init__(self, local_path):
@@ -19,17 +20,13 @@ class GitHandler:
         if os.path.exists(self.local_path):
             return "Le dossier local existe déjà."
 
-        # --- DÉBUT DE LA CORRECTION ---
-        # Ancienne ligne fragile :
-        # remote_url_with_auth = f"https://{username}:{token}@{repo_url.split('//')[1]}"
-
-        # Nouvelle logique robuste :
-        # On supprime "https://" ou "http://" si l'utilisateur les a mis.
-        domain_part = repo_url.replace("https://", "").replace("http://", "")
-        
-        # On reconstruit l'URL d'authentification proprement.
-        remote_url_with_auth = f"https://{username}:{token}@{domain_part}"
-        # --- FIN DE LA CORRECTION ---
+        # Logique de construction d'URL plus robuste avec urllib
+        parsed_url = urlparse(repo_url)
+        # Insère les identifiants dans la partie 'netloc' (network location) de l'URL
+        netloc_with_auth = f"{username}:{token}@{parsed_url.netloc}"
+        # Reconstruit l'URL complète en s'assurant que le schéma est https
+        # et en conservant le reste de l'URL (chemin, etc.)
+        remote_url_with_auth = urlunparse(parsed_url._replace(scheme="https", netloc=netloc_with_auth))
 
         try:
             print(f"Tentative de clonage depuis l'URL : {repo_url}")
