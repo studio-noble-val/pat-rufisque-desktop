@@ -4,6 +4,7 @@
 # Fichiers de configuration sensibles
 # Ne JAMAIS commiter ce fichier car il contient votre token!
 /config.json
+src/config.json
 
 # Fichiers et dossiers générés par Python
 __pycache__/
