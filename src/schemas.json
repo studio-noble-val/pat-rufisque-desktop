@@ -1,0 +1,31 @@
+{
+    "data/acteurs.geojson": {
+        "editable_fields": [
+            "nom",
+            "description",
+            "contact",
+            "site_web"
+        ]
+    },
+    "data/lieux.geojson": {
+        "editable_fields": [
+            "nom_lieu",
+            "categorie"
+        ]
+    },
+
+    "data/cantines_scolaires.geojson": {
+        "editable_fields": [
+            "cuisine_ratachement",
+            "nom_etab",
+            "annee_ratachement",
+            "nb_repas_moyen",
+            "fille_pc",
+            "photo"
+        ]
+    },
+
+    "default": {
+        "editable_fields": []
+    }
+}
