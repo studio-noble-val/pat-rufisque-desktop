@@ -42,9 +42,6 @@ class GitHandler:
 
     def clone(self, repo_url, username, token):
         """ Clone un dépôt distant. """
-        if os.path.exists(self.local_path):
-            return "Le dossier local existe déjà."
-
         # Votre logique de construction d'URL robuste avec urllib est conservée
         parsed_url = urlparse(repo_url)
         netloc_with_auth = f"{username}:{token}@{parsed_url.netloc}"

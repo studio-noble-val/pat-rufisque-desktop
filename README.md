@@ -88,7 +88,7 @@ Ce projet est développé en Python avec la bibliothèque `PySide6` pour l'inter
 
 ### Lancement en mode développement
 
-    python main.py
+    python src/main.py
 
 ### Génération de l'exécutable
 
@@ -100,6 +100,6 @@ L'exécutable est généré avec PyInstaller.
 
 2.  Lancez la commande de packaging depuis la racine du projet :
 
-        pyinstaller --onefile --windowed --name="EditeurGeoJSON" main.py
+        pyinstaller --onefile --windowed --name="EditeurGeoJSON" --add-data "src/icons:icons" src/main.py
 
 3.  L'exécutable final se trouvera dans le dossier `dist/`.

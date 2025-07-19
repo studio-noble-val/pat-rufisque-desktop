@@ -135,8 +135,31 @@ class MainWindow(QMainWindow):
     def initialize_repo(self):
         self.git_handler = GitHandler(self.config["LOCAL_REPO_PATH"])
         if not self.git_handler.repo:
-            self.setup_welcome_for_config(f"Dépôt local non trouvé. Clonez-le via la configuration.")
-            return
+            # Le dépôt n'existe pas localement. Tentons de le cloner.
+            # C'est le comportement attendu lors de la première configuration.
+            self.ui.connection_status_label.setText("Dépôt local non trouvé. Tentative de clonage...")
+            self.ui.connection_status_label.setStyleSheet("color: orange; font-size: 14px; font-weight: bold;")
+            self.ui.status_label.setText(f"Clonage de {self.config['REPO_URL']} dans {self.config['LOCAL_REPO_PATH']}...")
+            QApplication.processEvents()  # Mettre à jour l'UI pour montrer que nous travaillons
+
+            clone_result = self.git_handler.clone(
+                self.config["REPO_URL"],
+                self.config.get("GITHUB_USERNAME", ""),
+                self.config.get("GITHUB_TOKEN", "")
+            )
+
+            if clone_result is not True:
+                # Le clonage a échoué.
+                error_message = f"Échec du clonage : {clone_result}"
+                self.setup_welcome_for_config(error_message)
+                QMessageBox.critical(self, "Échec du clonage", str(clone_result))
+                return
+
+            # Après un clonage réussi, l'objet repo du git_handler est maintenant défini.
+            self.ui.status_label.setText("Clonage réussi.")
+            QApplication.processEvents()
+
+        # Cette partie est pour quand le dépôt existe déjà ou vient d'être cloné.
         connection_result = self.git_handler.test_connection()
         if connection_result is True:
             self.ui.connection_status_label.setText("✅  Connecté au dépôt")
